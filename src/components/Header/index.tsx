@@ -10,7 +10,6 @@ export  function Header() {
             <Content>
                 <div>
                 <img src={logo} alt="logo" />
-                <img src={dtmoney} alt="dt money" />
                 </div>
 
                 <button>
