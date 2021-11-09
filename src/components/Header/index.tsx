@@ -1,19 +1,21 @@
-import React from 'react'
-import { Container, Content } from './styled'
-
 import logo from "../../assets/logo.svg"
 
-export  function Header() {
+import { Container, Content } from './styled'
+
+interface ModalProps{
+    onOpenNewTransactionModal: ()=> void;
+
+}
+
+export  function Header({onOpenNewTransactionModal}: ModalProps) {
     return (
         <Container>
-            <Content>
-                <div>
-                <img src={logo} alt="logo" />
-                </div>
-
-                <button>
+            <Content> 
+                <img src={logo} alt="logo" />   
+                <button type="button" onClick={onOpenNewTransactionModal}>
                     Nova Transação
                 </button>
+
             </Content>
         </Container>
     )
