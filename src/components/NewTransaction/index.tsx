@@ -1,4 +1,5 @@
 import { FormEvent, useState } from "react"
+import { api } from "../../services/api"
 import Modal from "react-modal"
 import closeBtn from "../../assets/Botão - Fechar.svg"
 import incomeImg from "../../assets/Entradas.svg"
@@ -20,13 +21,16 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
     function handleCreateNewTransaction (event: FormEvent){
         event.preventDefault();
 
-        console.log({
+        const data = {
             title,
             value,
             category,
             type
-        })
+        }
+
+        api.post("/transactions", data)
     }
+
 
     return (
     <Modal
@@ -63,7 +67,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
                 <RadiosButtom
                     type="button"
                     onClick={()=>{setType("deposit")}}
-                    isActive={type == "deposit"}
+                    isActive={type === "deposit"}
                     activeColor="green"
                 >
                     <img src={incomeImg} alt="Entradas" />
@@ -73,7 +77,7 @@ export function NewTransactionModal({isOpen, onRequestClose}: NewTransactionModa
                 <RadiosButtom
                     type="button"
                     onClick={()=>{setType("withdraw")}}
-                    isActive={type == "withdraw"}
+                    isActive={type === "withdraw"}
                     activeColor="red"
                 >
 
