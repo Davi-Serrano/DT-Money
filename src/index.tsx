@@ -15,7 +15,7 @@ createServer({
           title: "Frelance de website",
           type: "deposit",
           category: "Dev",
-          amount: "6000",
+          amount: 6000,
           createdAt: new Date("2021-03-12 09:00:00"),
         },
         {
@@ -23,7 +23,7 @@ createServer({
           title: "Alugel",
           type: "withdraw",
           category: "Casa",
-          amount: "1000",
+          amount: 1000,
           createdAt: new Date("2021-03-14 11:00:00"),
         },
         
